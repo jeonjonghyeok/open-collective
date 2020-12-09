@@ -1,0 +1,52 @@
+.mainNav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px;
+    border: 1px solid #DDD;
+}
+.MNlogo{
+    display: flex;
+    align-items: center;
+}
+.MNlogo img:nth-child(2){
+    margin-left: 10px;
+}
+.MNmiddle{
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+    width: 430px;
+    font-weight: bold;
+}
+.MNavinput{
+    display: flex;
+    align-items: center;
+    border:1px solid #DDD;
+    border-radius: 10px;
+    width: 196px;
+    height: 36px;
+}
+.MNavinput img {
+    padding: 10px;
+}
+.MNavinput input {
+    border : none;
+    border-top: 0px;
+    border-left: 0px;
+    width: 158px;
+    height: 26px;
+}
+.MNavinput a {
+    font-size: 10px;
+}
+
+#sign{
+    border: 1px solid #DDD;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 30px;
+    color:#3389ff;
+    margin-right: 30px;
+}
