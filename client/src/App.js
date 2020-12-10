@@ -36,7 +36,7 @@ class App extends Component{
           <Navbar />
           {/* <Route exact path='/' component={HomePage} /> */}
           <Route exact path='/opencollective' component={opencollective} />
-          <Route exact path='/signin?next=%2Fopencollective' component={signin} />
+          <Route exact path='/signin' component={signin} />
           {/* <Route exact path='/auth' component={AuthenticationPage} /> */}
           {/* <Route exact path='/register' component={Register} /> */}
           {/* <PrivateRoute exact path='/dashboard/:tab' component={Dashboard} /> */}

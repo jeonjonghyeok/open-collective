@@ -9,10 +9,10 @@ class Login extends Component{
                     <p>Sign in using your email address:</p>
                     <input font-size="14px" id="email" name="email" placeholder="i.e. yourname@yourhost.com"></input>
                     <button>Sign in</button>
-                </div>
-                <div className="register_nav">
-                    <span>Don't have an account?</span> 
-                    <span> Join Free </span>
+                    <div className="register_nav">
+                        <span>Don't have an account?</span> 
+                        <span> Join Free </span>
+                    </div>
                 </div>
             </div>
         )
