@@ -2,8 +2,9 @@ import {Model, ObjectID} from "@tsed/mongoose";
 import { Property, Required } from "@tsed/schema";
 import {UserInfo} from "@tsed/passport";
 import {Format} from "@tsed/common";
-
-
+import {User} from "../user/User";
+import {Group} from "../group/Group";
+import {Schema} from "mongoose";
 @Model()
 export class Donation {
     @ObjectID("id")
@@ -15,10 +16,13 @@ export class Donation {
     @Required()
     price: string;
 
-    @ObjectID("id")
-		@Required()
-		uid: string;
+		@Required(false)
+		users: [{ type: Schema.Types.ObjectId, ref: User}]
+		groups: [{ type: Schema.Types.ObjectId, ref: Group}]
 
-	@Required()
-		gid: string;
+		/*@Format("date-time")
+		@Required()
+		date: Date = new Date();
+	*/
+
 }

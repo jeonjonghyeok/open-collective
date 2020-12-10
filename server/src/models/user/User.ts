@@ -3,6 +3,8 @@ import { Property, Required } from "@tsed/schema";
 import {Credential} from "./Credential";
 import {UserInfo} from "@tsed/passport";
 import {Format} from "@tsed/common";
+import {Group} from "../group/Group";
+import {Schema} from 'mongoose';
 
 @Model()
 export class User {
@@ -27,6 +29,11 @@ export class User {
 
 		@Required(false)
 		crypto: string;
+
+	@Required(false)
+	groups: [{ type:Schema.Types.ObjectId, ref: Group}]
+
+
 
     verifyPassword(password: string){
         return this.password === password;

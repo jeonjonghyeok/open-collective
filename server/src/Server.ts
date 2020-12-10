@@ -47,7 +47,7 @@ export class Server {
 
   @Configuration()
   settings: Configuration;
-  
+
   $beforeRoutesInit(): void {
     this.app
       // .use(cors())
