@@ -7,8 +7,19 @@ export class GroupService {
     private Group: MongooseModel<Group>;
     /**
      * Find a User by his ID.
-     * @param group
+     * @param id
      * @returns {undefined|Group}
+     */
+    async find(id: string): Promise<Group | null> {
+        const model = await this.Group.findById(id).exec();
+					return model;
+
+					}
+
+    /**
+     * Find a User by his ID.
+     * @param group
+     * @returns {Promise<TResult|TResult2|Group}
      */
     async save(group: Group): Promise<Group> {
         const model = new this.Group(group);

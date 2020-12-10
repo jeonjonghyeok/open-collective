@@ -1,4 +1,4 @@
-import {Model, ObjectID} from "@tsed/mongoose";
+import {Model, ObjectID, VirtualRef, VirtualRefs, Ref} from "@tsed/mongoose";
 import { Property, Required } from "@tsed/schema";
 import {UserInfo} from "@tsed/passport";
 import {Format} from "@tsed/common";
@@ -14,15 +14,18 @@ export class Donation {
     type: string;
 
     @Required()
-    price: string;
+    price: Number;
 
-		@Required(false)
-		users: [{ type: Schema.Types.ObjectId, ref: User}]
-		groups: [{ type: Schema.Types.ObjectId, ref: Group}]
+	@Ref(Group)
+	gid: Ref<Group>;
 
-		/*@Format("date-time")
-		@Required()
-		date: Date = new Date();
-	*/
+	@Ref(Group)
+	gids: Ref<Group>[];
+
+	@Ref(User)
+	uid: Ref<User>;
+
+	@Ref(User)
+	uids: Ref<User>[];
 
 }

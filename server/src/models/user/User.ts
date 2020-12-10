@@ -1,10 +1,11 @@
-import {Model, ObjectID} from "@tsed/mongoose";
+import {Model, ObjectID, Ref} from "@tsed/mongoose";
 import { Property, Required } from "@tsed/schema";
 import {Credential} from "./Credential";
 import {UserInfo} from "@tsed/passport";
 import {Format} from "@tsed/common";
 import {Group} from "../group/Group";
 import {Schema} from 'mongoose';
+import {Donation} from "../donation/Donation";
 
 @Model()
 export class User {
@@ -29,9 +30,6 @@ export class User {
 
 		@Required(false)
 		crypto: string;
-
-	@Required(false)
-	groups: [{ type:Schema.Types.ObjectId, ref: Group}]
 
 
 

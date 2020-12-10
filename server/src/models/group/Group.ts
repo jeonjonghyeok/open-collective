@@ -1,10 +1,10 @@
-import {Model, ObjectID} from "@tsed/mongoose";
+import {Model, ObjectID, Ref} from "@tsed/mongoose";
 import { Property, Required } from "@tsed/schema";
 import {UserInfo} from "@tsed/passport";
 import {Format} from "@tsed/common";
 import {User} from "../user/User";
 import { Schema } from 'mongoose';
-
+import {Donation} from "../donation/Donation";
 @Model()
 export class Group {
     @ObjectID("id")
@@ -26,8 +26,11 @@ export class Group {
 		@Required(false)
 		total_price: number;
 
-	@Required(false)
-	users: [{ type:Schema.Types.ObjectId, ref: User}]
+	@Ref(User)
+	uid: Ref<User>;
+
+	@Ref(User)
+	uids: Ref<User>[];
 
 
 
