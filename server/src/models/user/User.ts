@@ -31,6 +31,9 @@ export class User {
 		@Required(false)
 		crypto: string;
 
+		@Required(false)
+		email_verify: boolean;
+
 
 
     verifyPassword(password: string){
