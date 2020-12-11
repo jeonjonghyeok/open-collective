@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
+    margin-top: 50px;
 }
 
 .login_container{
@@ -15,10 +15,47 @@
     height: 232px;
 }
 
+.login_container p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.login_box{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login_box input{
+    width: 80%;
+    min-width: 120px;
+    padding: 8px 16px;
+    font-size:14px;
+    margin-left: 10px;
+}
+
+.login_box button{
+    border: 1px solid rgb(24, 105, 245);
+    background-color: rgb(24, 105, 245) ;
+    color:rgb(255, 255, 255);
+    font-size: 14px;
+    padding: 10px 10px;
+    border-radius: 100px;
+    min-width: 100px;
+    margin-right: 10px;
+}
+
 .register_nav{
     width: 446px;
     height: 79px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.register_nav span:nth-last-child(1){
+    color: rgb(78, 80, 82);
+    font-weight: 500;
+    font-size: 14px;
 }

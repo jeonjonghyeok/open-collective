@@ -1,0 +1,30 @@
+
+.Register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border : 1px solid rgb(220, 222, 224);
+    width: 100%;
+    max-width: 480px;
+    height: 460px;
+}
+
+.Register_SelectButtons{
+    width: 100%;
+}
+
+.Register_SelectButtons>button{
+    width:50%;
+    padding: 20px 16px;
+}
+
+.Register_Sign-in>button{
+    margin-left: 10px;
+}
+
+.Register_Sign-in{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 79px;
+}
