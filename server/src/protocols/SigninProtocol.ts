@@ -14,9 +14,7 @@ import * as jwt from "jsonwebtoken";
 }
 })
 export class SigninProtocol implements OnVerify, OnInstall {
-    constructor(private userService: UserService){
-
-    }
+    constructor(private userService: UserService){}
     async $onVerify(@Req() req: Req, @BodyParams() user: any){
         const {email} = user;
         const userInfo = await this.userService.find(email);
@@ -26,15 +24,16 @@ export class SigninProtocol implements OnVerify, OnInstall {
         const token = this.createJwt(user)
         user.token = token;
 
+
         return this.userService.save(user);
     }
 
     $onInstall(strategy: Strategy): void {
 
     }
-    createJwt(user: User) {
+			createJwt(user:User) {
         const now = Date.now();
-    
+
         return jwt.sign(
           {
             sub: user._id,
