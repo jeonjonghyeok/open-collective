@@ -16,11 +16,12 @@ import Navbar from './components/Navbar/navbar';
 // // REDUX IMPORTS
 import { store } from "./store";
 import { loadUser } from "./actions/authActions"
-// axios.defaults.baseURL = 'http://localhost:8081';
+// axios.defaults.baseURL = 'http://http://133.186.209.150:5010';
 
 import opencollective from "./pages/Opencollective/Opencollective"
 import signin from "./pages/AuthPage/Login"
-
+import register from "./pages/AuthPage/Register"
+// import axios from "axios";
 
 class App extends Component{
   // componentDidMount() {
@@ -36,7 +37,8 @@ class App extends Component{
           <Navbar />
           {/* <Route exact path='/' component={HomePage} /> */}
           <Route exact path='/opencollective' component={opencollective} />
-          <Route exact path='/signin?next=%2Fopencollective' component={signin} />
+          <Route exact path='/signin' component={signin} />
+          <Route exact path='/opencollective/contact' component={register}/>
           {/* <Route exact path='/auth' component={AuthenticationPage} /> */}
           {/* <Route exact path='/register' component={Register} /> */}
           {/* <PrivateRoute exact path='/dashboard/:tab' component={Dashboard} /> */}
