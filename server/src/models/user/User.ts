@@ -34,6 +34,9 @@ export class User {
 		@Required(false)
 		email_verify: boolean;
 
+		@Required(false)
+		key_for_verify: string;
+
 
 
     verifyPassword(password: string){
