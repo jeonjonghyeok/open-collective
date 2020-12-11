@@ -26,12 +26,18 @@ export class PassportCtrl {
     }
 
 		@Get("/email/:key")
-		async email(@Required() @PathParams("key") token: string) {
-			const id = jwt.verify(token,'secretOrKey');
-				const user = await this.userService.findOne(id);
+		async email(@Required() @PathParams("key") key: string) {
+			console.log("key="+key);
+			const decoded = <any>jwt.verify(key,'secretOrKey');
+			console.log("넘어온 토큰"+JSON.stringify(decoded));
+				const user = await this.userService.findOne(decoded.iat);
+			console.log("decoded="+decoded);
+			console.log("user="+user);
+			console.log("decoded[0]"+decoded[0]);
 				if (user){
 				await this.userService.email(user);
 				}
+			console.log("토큰안맞음");
 		}
     // @Get("/userinfo")
     // @Authorize("jwt")

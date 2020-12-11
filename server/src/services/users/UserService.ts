@@ -26,6 +26,7 @@ export class UserService {
      */
 		async findOne(id: string|object): Promise<User | null> {
 			const User = await this.User.findOne({id:id});
+			console.log("service"+User);
 			return User;
 		}
     async save(User: User): Promise<User> {

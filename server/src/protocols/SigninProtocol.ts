@@ -26,7 +26,7 @@ export class SigninProtocol implements OnVerify, OnInstall {
         user.token = token;
 			user.email_verify = false;
 			user.key_for_verify = token;
-			const verificationLink= 'http://localhost:5010/'+'auth/email/' + user.key_for_verify
+			const verificationLink= 'http://localhost:5010/rest/auth/email/'+user.key_for_verify
 
 			const transporter = nodemailer.createTransport({
 				service: 'gmail',
@@ -40,8 +40,9 @@ export class SigninProtocol implements OnVerify, OnInstall {
 				from: 'e3dadev@gmail.com',
 				to: user.email,
 				subject: 'email verification',
-				html: `<p><a href="${verificationLink}"><a/></p>`
+				html: `<p><a href="${verificationLink}">이메일 인증</a></p>`
 			};
+			console.log(mailOptions);
 			transporter.sendMail(mailOptions, function (error,info) {
 	if(error) {
 		throw new Forbidden("send email error")
