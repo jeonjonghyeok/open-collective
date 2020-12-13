@@ -3,6 +3,7 @@ import {MongooseModel} from "@tsed/mongoose";
 import {User} from "../../models/user/User";
 import {Credential} from "../../models/user/Credential";
 import { userInfo } from 'os';
+
 @Service()
 export class UserService {
     @Inject(User)
@@ -14,15 +15,16 @@ export class UserService {
      */
     async find(id: string): Promise<User | null>{
         const User = await this.User.findOne({email:id});
-        
+
         return User;
-        
+
     }
     async save(User: User): Promise<User> {
         const model = new this.User(User);
         await model.save(function(err,User){
             if(err) return console.error(err);
             console.log(User);
+
         })
         return model;
     }
@@ -31,16 +33,16 @@ export class UserService {
         await model.update(
             {token: model.token}
         )
-        return model;    
+        return model;
     }
     // async findOne(id: string): Promise<Credential | null>{
     //     const Credential = await this.User.findOne({email:id});
-        
+
     //     return Credential;
-        
+
     // }
     attachToken(user: User, token: string) {
     user.token = token;
   }
-    
+
 }

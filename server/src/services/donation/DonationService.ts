@@ -5,6 +5,19 @@ import {Donation} from "../../models/donation/Donation";
 export class DonationService {
     @Inject(Donation)
     private Donation: MongooseModel<Donation>;
+
+
+    /**
+     * Find a User by his ID.
+     * @param id
+     * @returns {undefined|Donation}
+     */
+    async find(id: string): Promise<Donation | null> {
+        const model = await this.Donation.findById(id).exec();
+					return model;
+
+					}
+
     /**
      * Find a User by his ID.
      * @param donation
