@@ -1,6 +1,6 @@
 # open-collective
 
-# TsED Framwork apply
+TsED Framwork apply
 
-# backend: typescript (tsed)
-# frontend: react
+backend: typescript (tsed)
+frontend: react
