@@ -35,7 +35,7 @@ export class User {
 		email_verify: boolean;
 
 		@Required(false)
-		key_for_verify: string;
+key_for_verify: string;
 
 
 

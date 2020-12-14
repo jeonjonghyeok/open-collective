@@ -57,10 +57,10 @@ export class SigninProtocol implements OnVerify, OnInstall {
     }
 			createJwt(user:User) {
         const now = Date.now();
-
+				console.log("userid= "+user._id);
         return jwt.sign(
           {
-            sub: user._id,
+            sub: user.email,
             // exp: now + 3600 * 1000,
             // iat: now
           },
