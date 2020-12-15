@@ -19,6 +19,16 @@ export class UserService {
         return User;
 
     }
+    /**
+     * Find a User by his ID.
+     * @param id
+     * @returns {undefined|User}
+     */
+		async findOne(id: string|object): Promise<User | null> {
+			const User = await this.User.findOne({id:id});
+			console.log("service"+User);
+			return User;
+		}
     async save(User: User): Promise<User> {
         const model = new this.User(User);
         await model.save(function(err,User){
@@ -35,6 +45,12 @@ export class UserService {
         )
         return model;
     }
+		async email(User: User) {
+		const model = new this.User(User);
+			await model.update(
+				{email_verify: true}
+			)
+		}
     // async findOne(id: string): Promise<Credential | null>{
     //     const Credential = await this.User.findOne({email:id});
 
