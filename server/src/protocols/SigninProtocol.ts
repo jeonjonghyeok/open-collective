@@ -18,6 +18,7 @@ export class SigninProtocol implements OnVerify, OnInstall {
     constructor(private userService: UserService){}
     async $onVerify(@Req() req: Req, @BodyParams() user: any){
         const {email} = user;
+			console.log(user);
         const userInfo = await this.userService.find(email);
         if(userInfo){
             throw new Forbidden("Email is already registerd");
